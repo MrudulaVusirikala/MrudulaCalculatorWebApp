@@ -13,10 +13,13 @@ $(document).ready(function () {
 
 function fire_ajax_submit() {
 
+
+
     var request = {}
-    var conversionType = $('input[name=conversionType]:checked').val();
+    var conversionType = $('#operation option:selected').val();
     request["type"] = conversionType;
-    request["values"] = $("#conversionValues").val();
+    request["number1"] = $("#number1").val();
+    request["number2"] = $("#number2").val();
     $("#btn-convert").prop("disabled", true);
 
     console.log(request);
@@ -24,7 +27,7 @@ function fire_ajax_submit() {
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "/api/convert",
+        url: "/api/calculate",
         data: JSON.stringify(request),
         dataType: 'json',
         cache: false,
