@@ -1,13 +1,14 @@
 package com.example.targettech.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class CalRequest {
-    @NotBlank(message = "number1 can't be empty!")
-    int number1;
-    @NotBlank(message = "number2 can't be empty!")
-    int number2 ;
+    @NotNull(message = "number1 can't be empty!")
+    Integer number1;
+    @NotNull(message = "number2 can't be empty!")
+    Integer number2 ;
     @NotBlank(message = "operation can't be empty!")
     String operation;
 
@@ -33,5 +34,14 @@ public class CalRequest {
 
     public void setOperation(String operation) {
         this.operation = operation;
+    }
+
+    @Override
+    public String toString() {
+        return "CalRequest{" +
+                "number1=" + number1 +
+                ", number2=" + number2 +
+                ", operation='" + operation + '\'' +
+                '}';
     }
 }

@@ -17,7 +17,7 @@ function fire_ajax_submit() {
 
     var request = {}
     var conversionType = $('#operation option:selected').val();
-    request["type"] = conversionType;
+    request["operation"] = conversionType;
     request["number1"] = $("#number1").val();
     request["number2"] = $("#number2").val();
     $("#btn-convert").prop("disabled", true);

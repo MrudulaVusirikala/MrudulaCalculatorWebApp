@@ -20,7 +20,7 @@ public class CalController {
     @PostMapping("/api/calculate")
     public ResponseEntity<?> calculate(@Valid @RequestBody CalRequest calRequest) {
         double resultFromService = calService.calculate(calRequest);
-        return ResponseEntity.ok(String.join(resultFromService));
+        return ResponseEntity.ok(resultFromService);
     }
 
 }

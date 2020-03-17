@@ -10,14 +10,15 @@ import java.util.List;
 public class CalService {
 
  public int calculate(CalRequest calRequest){
+     System.out.println(calRequest);
      switch (calRequest.getOperation()){
-         case "add":
+         case "Add":
          return add(calRequest.getNumber1(),calRequest.getNumber2());
-         case "subtract":
+         case "Subtract":
              return subtract(calRequest.getNumber1(),calRequest.getNumber2());
-         case "multiply":
+         case "Multiply":
              return multiply(calRequest.getNumber1(),calRequest.getNumber2());
-         case "divide":
+         case "Divide":
              return (int) divide(calRequest.getNumber1(),calRequest.getNumber2());
          default:
              return 0;
